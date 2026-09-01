@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolarHome — Сонячні електростанції та автономне живлення</title>
+    <title>VP Solar — Сонячні електростанції та автономне живлення</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #064E3B;
-            --bg-darker: #022C22;
-            --bg-card-dark: #046A38;
-            --bg-light: #F2F7F4;
+            /* Оновлена палітра під логотип VP */
+            --bg-dark: #0042AC;            /* Основний насичений синій */
+            --bg-darker: #061833;          /* Глибокий темно-синій (футер, шапка) */
+            --bg-card-dark: #0A3274;       /* Темно-синій для картка-акцентів */
+            --bg-light: #F0F4F9;          /* Світлий прохолодно-сірий фон */
             --bg-card-light: #FFFFFF;
-            --accent-gold: #F59E0B;
-            --accent-gold-hover: #D97706;
-            --accent-teal: #0D9488;
-            --text-main: #0F172A;
+            --accent-gold: #0056E0;        /* Яскравий акцентний синій для кнопок */
+            --accent-gold-hover: #003FB3;  /* Темніший синій для ховеру */
+            --accent-teal: #004DB3;        /* Темно-голубий/синій акцент для підзаголовків */
+            --text-main: #0B192C;          /* Темно-синій текст */
             --text-muted: #475569;
             --text-light: #F8FAFC;
             --text-light-muted: #94A3B8;
-            --border-light: #E2E8F0;
-            --border-dark: #065F46;
+            --border-light: #D5E0EA;
+            --border-dark: #1E3A8A;
             --radius-sm: 8px;
             --radius-md: 16px;
             --radius-lg: 24px;
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.08);
-            --shadow-lg: 0 20px 30px -10px rgba(0,0,0,0.15);
+            --shadow-md: 0 10px 25px -5px rgba(0,66,172,0.1);
+            --shadow-lg: 0 20px 30px -10px rgba(0,24,51,0.2);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Rubik', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
@@ -70,7 +71,7 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 24px;
             font-weight: 800;
             color: var(--text-light);
@@ -79,15 +80,18 @@
         }
 
         .logo-icon {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--accent-gold), #F2994A);
-            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, #0056E0 0%, #001A4D 100%);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #000;
-            font-size: 20px;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 900;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 8px rgba(0,86,224,0.4);
         }
 
         .nav-links {
@@ -104,7 +108,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent-gold);
+            color: #60A5FA;
         }
 
         .header-contacts {
@@ -115,29 +119,38 @@
         }
 
         .phone-badge {
-            color: var(--accent-gold);
+            color: #FFFFFF;
             font-weight: 700;
             font-size: 16px;
             text-decoration: none;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s;
+        }
+
+        .phone-badge:hover {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
         }
 
         /* HERO SECTION */
         .hero {
-    /* Фото будинку як фон + зелений напівпрозорий шар поверх нього */
-    background:
-        linear-gradient(
-            180deg,
-            rgba(2, 44, 34, 0.78) 0%,
-            rgba(6, 78, 59, 0.72) 100%
-        ),
-        url('img/Gemini_Generated_Image_tgltpktgltpktglt.png') center center / cover no-repeat;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(6, 24, 51, 0.85) 0%,
+                    rgba(0, 66, 172, 0.80) 100%
+                ),
+                url('img/Gemini_Generated_Image_tgltpktgltpktglt.png') center center / cover no-repeat;
 
-    color: var(--text-light);
-    padding: 80px 0 100px;
-    min-height: 650px;
-    position: relative;
-    overflow: hidden;
-}
+            color: var(--text-light);
+            padding: 80px 0 100px;
+            min-height: 650px;
+            position: relative;
+            overflow: hidden;
+        }
 
         .hero::before {
             content: '';
@@ -146,7 +159,7 @@
             right: -100px;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(0, 86, 224, 0.35) 0%, rgba(0,0,0,0) 70%);
             pointer-events: none;
         }
 
@@ -161,14 +174,15 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(245, 158, 11, 0.15);
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #93C5FD;
             padding: 6px 16px;
             border-radius: 100px;
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 24px;
+            backdrop-filter: blur(4px);
         }
 
         .hero h1 {
@@ -193,7 +207,7 @@
 
         .btn-primary {
             background: var(--accent-gold);
-            color: #0F172A;
+            color: #FFFFFF;
             padding: 16px 32px;
             border-radius: var(--radius-sm);
             font-weight: 700;
@@ -201,15 +215,17 @@
             text-decoration: none;
             border: none;
             cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 4px 14px rgba(0, 86, 224, 0.4);
         }
 
         .btn-primary:hover {
             background: var(--accent-gold-hover);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 86, 224, 0.6);
         }
 
         .btn-outline {
@@ -220,7 +236,7 @@
             font-weight: 600;
             font-size: 16px;
             text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
             transition: background 0.2s, border 0.2s;
             display: inline-flex;
             align-items: center;
@@ -228,26 +244,17 @@
         }
 
         .btn-outline:hover {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.1);
             border-color: var(--text-light);
         }
 
         .hero-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(6, 24, 51, 0.4);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: var(--radius-lg);
             padding: 32px;
             position: relative;
-        }
-
-        .hero-card-img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: var(--radius-md);
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-lg);
         }
 
         .hero-stats {
@@ -259,7 +266,7 @@
         .stat-number {
             font-size: 24px;
             font-weight: 800;
-            color: var(--accent-gold);
+            color: #60A5FA;
         }
 
         .stat-label {
@@ -320,8 +327,8 @@
         .step-num {
             width: 48px;
             height: 48px;
-            background: var(--bg-dark);
-            color: var(--accent-gold);
+            background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+            color: #FFFFFF;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -329,6 +336,7 @@
             font-weight: 800;
             font-size: 20px;
             margin-bottom: 24px;
+            box-shadow: 0 4px 10px rgba(0, 66, 172, 0.3);
         }
 
         .step-card h3 {
@@ -365,13 +373,13 @@
 
         .adv-card:hover {
             box-shadow: var(--shadow-md);
-            border-color: var(--accent-teal);
+            border-color: var(--accent-gold);
         }
 
         .adv-icon {
             width: 56px;
             height: 56px;
-            background: rgba(13, 148, 136, 0.1);
+            background: rgba(0, 86, 224, 0.08);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -429,7 +437,7 @@
         .product-badge {
             align-self: flex-start;
             background: #E0F2FE;
-            color: #0369A1;
+            color: #0284C7;
             font-size: 11px;
             font-weight: 700;
             padding: 4px 10px;
@@ -508,13 +516,13 @@
         }
 
         .btn-buy:hover {
-            background: var(--accent-teal);
+            background: var(--accent-gold);
         }
 
         /* WARRANTY & DELIVERY */
         .warranty-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
             color: var(--text-light);
         }
 
@@ -526,7 +534,7 @@
 
         .warranty-box {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: var(--radius-md);
             padding: 40px;
         }
@@ -541,7 +549,7 @@
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 16px;
-            color: var(--accent-gold);
+            color: #60A5FA;
         }
 
         .warranty-box p {
@@ -596,7 +604,7 @@
             align-items: center;
             justify-content: center;
             font-size: 20px;
-            color: var(--accent-teal);
+            color: var(--bg-dark);
             flex-shrink: 0;
         }
 
@@ -652,7 +660,7 @@
         }
 
         .form-control:focus {
-            border-color: var(--accent-teal);
+            border-color: var(--accent-gold);
         }
 
         /* FOOTER */
@@ -660,7 +668,7 @@
             background: var(--bg-darker);
             color: var(--text-light-muted);
             padding: 40px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255,255,255,0.08);
             font-size: 14px;
         }
 
@@ -673,12 +681,11 @@
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="container header-nav">
             <a href="#" class="logo">
-                <div class="logo-icon">☀️</div>
-                SolarHome
+                <div class="logo-icon">VP</div>
+                VP Solar
             </a>
             <ul class="nav-links">
                 <li><a href="#about">Про енергію</a></li>
@@ -694,7 +701,6 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container hero-grid">
             <div>
@@ -725,7 +731,6 @@
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
     <section class="how-it-works" id="about">
         <div class="container">
             <div class="section-header">
@@ -752,11 +757,10 @@
         </div>
     </section>
 
-    <!-- ADVANTAGES -->
     <section class="advantages" id="advantages">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">Чому це вигідно</span>
+                <span class="section-subtitle">Чому це вигодно</span>
                 <h2 class="section-title">Краща інвестиція в затишок та безпеку родини</h2>
             </div>
             <div class="advantages-grid">
@@ -778,13 +782,12 @@
                 <div class="adv-card">
                     <div class="adv-icon">🔇</div>
                     <h3>Безшумність і еко</h3>
-                    <p>Ніякого шуму, смороду бензину та постійних заправок, як у звичайних генераторів.</p>
+                    <p>Ніякого шуму, смороду бензину та постійних заправок, як у ззвичайних генераторів.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SOLAR PANELS CATALOG -->
     <section class="catalog-section" id="panels">
         <div class="container">
             <div class="section-header">
@@ -859,7 +862,6 @@
         </div>
     </section>
 
-    <!-- INVERTERS CATALOG -->
     <section class="catalog-section alt-bg" id="inverters">
         <div class="container">
             <div class="section-header">
@@ -934,7 +936,6 @@
         </div>
     </section>
 
-    <!-- BATTERIES CATALOG -->
     <section class="catalog-section" id="batteries">
         <div class="container">
             <div class="section-header">
@@ -1009,7 +1010,6 @@
         </div>
     </section>
 
-    <!-- WARRANTY & DELIVERY -->
     <section class="warranty-section">
         <div class="container warranty-grid">
             <div class="warranty-box">
@@ -1025,7 +1025,6 @@
         </div>
     </section>
 
-    <!-- CONTACTS & FORM -->
     <section class="contacts-section" id="contacts">
         <div class="container contacts-grid">
             <div class="contact-info">
@@ -1078,10 +1077,9 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container footer-flex">
-            <div>© 2026 SolarHome. Всі права захищені. Сонячні системи під ключ.</div>
+            <div>© 2026 VP Solar. Всі права захищені. Сонячні системи під ключ.</div>
             <div>м. Київ, вул. Енергетиків, 10</div>
         </div>
     </footer>
